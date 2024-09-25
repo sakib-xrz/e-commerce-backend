@@ -10,7 +10,7 @@ datasource db {
 enum Role {
   SUPER_ADMIN
   ADMIN
-  USER
+  CUSTOMER
 }
 
 enum Status {
@@ -26,7 +26,7 @@ model User {
   password   String
   phone      String?
   photo      String?  @default("")
-  role       Role     @default(USER)
+  role       Role     @default(CUSTOMER)
   status     Status   @default(ACTIVE)
   is_deleted Boolean  @default(false)
   created_at DateTime @default(now())
